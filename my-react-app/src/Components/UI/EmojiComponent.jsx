@@ -19,7 +19,7 @@ export function EmojiComponent({icon, id, emojiData, setEmojiData}) {
     return (
         <>
             <a className='text-light' onClick={handleChange}>
-                <CIcon className='w-9 p-2' icon={icon}/></a>
+                <CIcon className='w_icons p-2' icon={icon}/></a>
             <span className='text-light'>{currentEmoji?.count}</span>
         </>
     )
