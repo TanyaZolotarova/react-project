@@ -1,14 +1,12 @@
 import './App.css';
-import {TitleTextComponent} from "./Components/TitleTextComponent";
-import {FormInputComponent} from "./Components/FormInputComponent";
-import {SliderComponent} from "./Components/SliderComponent";
+import {EmojiVotingComponent} from "./Components/EmojiVoiting/EmojiVotingComponent";
+import {HeaderSliderComponent} from "./Components/HeaderSlider/HeaderSliderComponent";
 
 function App() {
     return (
         <div className="App">
-            <TitleTextComponent/>
-            <FormInputComponent/>
-            <SliderComponent/>
+            <HeaderSliderComponent/>
+            <EmojiVotingComponent/>
         </div>
     );
 }
