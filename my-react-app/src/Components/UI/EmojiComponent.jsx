@@ -1,7 +1,9 @@
 import {CIcon} from "@coreui/icons-react";
+import {useCallback} from "react";
 
 export function EmojiComponent({icon, id, emojiData, setEmojiData}) {
-    function handleChange() {
+
+    const handleChange = useCallback(() => {
         const updatedEmojiData = emojiData.map((emoji) => {
             if (emoji.id === id) {
                 const newCount = emoji.count + 1;
@@ -12,7 +14,7 @@ export function EmojiComponent({icon, id, emojiData, setEmojiData}) {
             return emoji;
         });
         setEmojiData(updatedEmojiData);
-    }
+    }, [emojiData, id, setEmojiData])
 
     const currentEmoji = emojiData.find((emoji) => emoji.id === id);
 
