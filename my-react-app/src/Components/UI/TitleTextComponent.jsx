@@ -1,4 +1,6 @@
-export function TitleTextComponent({title, smallTitle, resultTitle}) {
+import React from "react";
+
+export const TitleTextComponent = React.memo(function TitleTextComponent({title, smallTitle, resultTitle}) {
 
     return (
         <div className="container mt-5">
@@ -7,4 +9,4 @@ export function TitleTextComponent({title, smallTitle, resultTitle}) {
             {resultTitle && <h3 className='text-light'>{resultTitle}</h3>}
         </div>
     )
-}
+});

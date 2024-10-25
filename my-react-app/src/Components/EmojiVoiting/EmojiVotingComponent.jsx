@@ -1,6 +1,6 @@
 import './Emoji.css';
 import {TitleTextComponent} from "../UI/TitleTextComponent";
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import {cilFrown, cilHappy, cilMeh, cilMoodGood, cilMoodVeryBad} from "@coreui/icons";
 import {EmojiComponent} from "../UI/EmojiComponent";
 import {ButtonComponent} from "../UI/ButtonComponent";
@@ -17,18 +17,18 @@ export function EmojiVotingComponent() {
 
     const [winners, setWinners] = useState([]);
 
-    function showResults() {
+    const showResults = useCallback(() => {
         const maxVotes = Math.max(...emojiData.map(emoji => emoji.count));
         const winningEmojis = emojiData.filter(emoji => emoji.count === maxVotes && maxVotes > 0);
         setWinners(winningEmojis);
-    }
+    }, [emojiData])
 
-    function clearResults() {
+    const clearResults = useCallback(() => {
         const resetEmojiData = emojiData.map(emoji => ({...emoji, count: 0}));
         setEmojiData(resetEmojiData);
         localStorage.clear();
         setWinners([]);
-    }
+    }, [emojiData])
 
     return (
         <>

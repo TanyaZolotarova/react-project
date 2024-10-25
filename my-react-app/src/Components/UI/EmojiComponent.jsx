@@ -1,4 +1,5 @@
 import {CIcon} from "@coreui/icons-react";
+import {useCallback} from "react";
 
 export function EmojiComponent({icon, id, emojiData, setEmojiData}) {
     function handleChange() {
